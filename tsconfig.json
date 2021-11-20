@@ -25,7 +25,8 @@
         "Screens": [ "src/screens"],
         "Styles": [ "src/styles"],
         "Scripts": [ "src/scripts"],
-      }
+      },
+      "noFallthroughCasesInSwitch": true
     },
     "include": [
       "src"
