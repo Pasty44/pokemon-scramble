@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { shuffleArray, shuffleString } from 'scripts/util';
+import { TPokemon } from 'pokemon/types';
 
 const INPUT_COLORS = {
     NEUTRAL: 'black',
@@ -7,12 +8,17 @@ const INPUT_COLORS = {
     FAIL: '#DD0000'
 };
 
-export default function Game({ pokemonList, reset }) {
-    const inputRef = useRef(null);
+export interface IGameProps {
+    pokemonList: Array<TPokemon>;
+    reset: () => void;
+};
+
+export default function Game({ pokemonList, reset }: IGameProps) {
+    const inputRef = useRef<any>(null);
     const inputColor = useRef(INPUT_COLORS.NEUTRAL);
 
     // This is so we can clear timer on component unmounting to prevent crashes/memory leaks
-    const newPokemonTimeout = useRef(null);
+    const newPokemonTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     useEffect(() => {
         return () => {
             if (!!newPokemonTimeout.current) clearTimeout(newPokemonTimeout.current);
@@ -61,7 +67,7 @@ export default function Game({ pokemonList, reset }) {
         }, 1600);
     }, []);
     
-    const onType = (updatedGuess, cursorPosition) => {
+    const onType = (updatedGuess: string, cursorPosition: number | null) => {
         if (!canType) return;
         
         setUserGuess(updatedGuess);
