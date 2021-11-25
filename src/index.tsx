@@ -1,10 +1,10 @@
 import { useState, StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import './styles/general.css';
-import './styles/game.css';
-import './styles/setup.css';
-import Game from './screens/Game.jsx';
-import Setup from './screens/Setup.jsx';
+import 'Styles/general.css';
+import 'Styles/game.css';
+import 'Styles/setup.css';
+import Game from './screens/Game';
+import Setup from './screens/Setup';
 
 export default function App() {
     const [pokemonList, setPokemonList] = useState(null);

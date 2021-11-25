@@ -7,7 +7,7 @@ import gen6 from './gen6.js';
 import gen7 from './gen7.js';
 import gen8 from './gen8.js';
 
-export default {
+const allPokemon = {
     1: gen1,
     2: gen2,
     3: gen3,
@@ -17,3 +17,5 @@ export default {
     7: gen7,
     8: gen8,
 };
+
+export default allPokemon;

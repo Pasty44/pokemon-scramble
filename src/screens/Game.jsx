@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { shuffleArray, shuffleString } from '../scripts/util.js';
+import { shuffleArray, shuffleString } from 'Scripts/util.js';
 
 const INPUT_COLORS = {
     NEUTRAL: 'black',
@@ -93,13 +93,13 @@ export default function Game({ pokemonList, reset }) {
         setUserGuess(currentPokemon.name);
 
         startNewPokemonTimer();
-    }, [currentPokemon]);
+    }, [currentPokemon, startNewPokemonTimer]);
 
     return (
         <>
             <div id='spriteContainer'>
                 {canType && <div id='spriteMask'>?</div>}
-                <img src={currentPokemon.url} height='100%' width='100%' />
+                <img src={currentPokemon.url} height='100%' width='100%' alt='pokemon sprite' />
             </div>
 
             <div className='my-3'>
