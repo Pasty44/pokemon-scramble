@@ -1,3 +1,5 @@
+// import TPokemon from 'Pokemon/types';
+
 const gen1Pokemon = [
     {
         "name": "bulbasaur",

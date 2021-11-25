@@ -1,4 +1,4 @@
-import gen1 from './gen1.js';
+import gen1 from './gen1.ts';
 import gen2 from './gen2.js';
 import gen3 from './gen3.js';
 import gen4 from './gen4.js';
