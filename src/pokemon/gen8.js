@@ -1,4 +1,4 @@
-export default [
+const gen8Pokemon = [
     {
         "name": "grookey",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/810.png",
@@ -445,3 +445,5 @@ export default [
         "pokedexId": 898
     }
 ];
+
+export default gen8Pokemon;

@@ -1,4 +1,4 @@
-export default [
+const gen3Pokemon = [
     {
         "name": "treecko",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/252.png",
@@ -675,3 +675,5 @@ export default [
         "pokedexId": 386
     }
 ];
+
+export default gen3Pokemon;

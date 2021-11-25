@@ -1,4 +1,4 @@
-export default [
+const gen7Pokemon = [
     {
         "name": "rowlet",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/722.png",
@@ -440,3 +440,5 @@ export default [
         "pokedexId": 809
     }
 ];
+
+export default gen7Pokemon;

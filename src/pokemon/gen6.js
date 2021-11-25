@@ -1,4 +1,4 @@
-export default [
+const gen6Pokemon = [
     {
         "name": "chespin",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/650.png",
@@ -360,3 +360,5 @@ export default [
         "pokedexId": 721
     }
 ];
+
+export default gen6Pokemon;

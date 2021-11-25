@@ -1,4 +1,4 @@
-export default [
+const gen2Pokemon = [
     {
         "name": "chikorita",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/152.png",
@@ -500,3 +500,5 @@ export default [
         "pokedexId": 251
     }
 ];
+
+export default gen2Pokemon;

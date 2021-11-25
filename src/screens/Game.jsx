@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { shuffleArray, shuffleString } from 'Scripts/util.js';
+import { shuffleArray, shuffleString } from 'Scripts/util';
 
 const INPUT_COLORS = {
     NEUTRAL: 'black',

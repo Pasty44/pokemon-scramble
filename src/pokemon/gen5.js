@@ -1,4 +1,4 @@
-export default [
+const gen5Pokemon = [
     {
         "name": "victini",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/494.png",
@@ -780,3 +780,5 @@ export default [
         "pokedexId": 649
     }
 ];
+
+export default gen5Pokemon;

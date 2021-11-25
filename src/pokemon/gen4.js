@@ -1,4 +1,4 @@
-export default [
+const gen4Pokemon = [
     {
         "name": "turtwig",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/387.png",
@@ -535,3 +535,5 @@ export default [
         "pokedexId": 493
     }
 ];
+
+export default gen4Pokemon;
