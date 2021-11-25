@@ -3,7 +3,7 @@ import { shuffleArray, shuffleString } from 'scripts/util';
 import { TPokemon } from 'pokemon/types';
 
 const INPUT_COLORS = {
-    NEUTRAL: 'black',
+    NEUTRAL: '#000000',
     SUCCESS: '#00BB00',
     FAIL: '#DD0000'
 };

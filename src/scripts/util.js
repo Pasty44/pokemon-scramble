@@ -1,3 +1,5 @@
+// TODO: this string randomizer has a chance to return the string in its original order,
+// defeating the point of he game. Need to ensure it's always disordered by at least one char
 export function shuffleString(input) {
     let a = input.split(''),
         n = a.length;
