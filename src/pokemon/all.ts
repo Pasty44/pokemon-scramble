@@ -8,15 +8,15 @@ import gen7 from 'pokemon/gen7';
 import gen8 from 'pokemon/gen8';
 import { TPokemon } from 'pokemon/types';
 
-const allPokemon: { [key: number]: Array<TPokemon> } = {
-    1: gen1,
-    2: gen2,
-    3: gen3,
-    4: gen4,
-    5: gen5,
-    6: gen6,
-    7: gen7,
-    8: gen8,
+const allPokemon: { [key: string]: Array<TPokemon> } = {
+    '1': gen1,
+    '2': gen2,
+    '3': gen3,
+    '4': gen4,
+    '5': gen5,
+    '6': gen6,
+    '7': gen7,
+    '8': gen8,
 };
 
 export default allPokemon;

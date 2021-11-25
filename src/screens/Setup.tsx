@@ -7,22 +7,22 @@ export interface ISetupProps {
 };
 
 export default function Setup({ startGame }: ISetupProps) {
-    const [gens, setGens] = useState<{ [key: number]: boolean}>(() => {
+    const [gens, setGens] = useState<{ [key: string]: boolean}>(() => {
         return Object.keys(pokemon).reduce((acc, curr, index) => {
-            if (index === 0) acc[curr as unknown as number] = true;
-            else acc[curr as unknown as number] = false;
+            if (index === 0) acc[curr] = true;
+            else acc[curr] = false;
             return acc;
-        }, ({} as { [key: number]: boolean}));
+        }, ({} as { [key: string]: boolean}));
     });
     
     const onClickStart = () => {
-        if (Object.keys(gens).every(key => gens[key as unknown as number] === false)) {
+        if (Object.keys(gens).every(key => gens[key] === false)) {
             return alert('You need to select at least 1 generation');
         }
 
         startGame(Object.keys(gens).reduce((acc, curr) => {
-            if (!!gens[curr as unknown as number]) {
-                return [...acc, ...pokemon[curr as unknown as number]];
+            if (!!gens[curr]) {
+                return [...acc, ...pokemon[curr]];
             }
             else return acc;
         }, ([] as Array<TPokemon>)));
@@ -47,10 +47,10 @@ export default function Setup({ startGame }: ISetupProps) {
                         <div
                             className='genCheckbox noSelect'
                             key={key}
-                            onClick={() => setGens({ ...gens, [key]: !gens[key as unknown as number]})}
+                            onClick={() => setGens({ ...gens, [key]: !gens[key]})}
                             style={{
-                                border: `3px solid ${!!gens[key as unknown as number] ? 'black' : 'grey'}`,
-                                color: !!gens[key as unknown as number] ? 'black' : 'grey',
+                                border: `3px solid ${!!gens[key] ? 'black' : 'grey'}`,
+                                color: !!gens[key] ? 'black' : 'grey',
                             }}
                         >
                             GEN {key}
