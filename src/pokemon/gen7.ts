@@ -1,4 +1,6 @@
-const gen7Pokemon = [
+import { TPokemon } from 'pokemon/types';
+
+const gen7Pokemon: Array<TPokemon> = [
     {
         "name": "rowlet",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/722.png",

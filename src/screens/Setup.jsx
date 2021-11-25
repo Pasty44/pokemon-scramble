@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import pokemon from 'Pokemon/all.js';
+import pokemon from 'pokemon/all';
 
 export default function Setup({ startGame }) {
     const [gens, setGens] = useState(() => {

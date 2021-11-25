@@ -1,19 +1,20 @@
 import { useState, StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import 'Styles/general.css';
-import 'Styles/game.css';
-import 'Styles/setup.css';
-import Game from './screens/Game';
-import Setup from './screens/Setup';
+import 'styles/general.css';
+import 'styles/game.css';
+import 'styles/setup.css';
+import Game from 'screens/Game';
+import Setup from 'screens/Setup';
+import { TPokemon } from 'pokemon/types';
 
 export default function App() {
-    const [pokemonList, setPokemonList] = useState(null);
+    const [pokemonList, setPokemonList] = useState<Array<TPokemon> | null>(null);
 
     const reset = () => {
         setPokemonList(null);
     };
 
-    const startGame = (list: any) => {
+    const startGame = (list: Array<TPokemon>) => {
         setPokemonList(list);
     };
 

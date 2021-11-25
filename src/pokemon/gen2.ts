@@ -1,4 +1,6 @@
-const gen2Pokemon = [
+import { TPokemon } from 'pokemon/types';
+
+const gen2Pokemon: Array<TPokemon> = [
     {
         "name": "chikorita",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/152.png",

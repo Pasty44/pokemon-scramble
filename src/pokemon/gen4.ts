@@ -1,4 +1,6 @@
-const gen4Pokemon = [
+import { TPokemon } from 'pokemon/types';
+
+const gen4Pokemon: Array<TPokemon> = [
     {
         "name": "turtwig",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/387.png",

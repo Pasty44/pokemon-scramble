@@ -1,4 +1,6 @@
-const gen3Pokemon = [
+import { TPokemon } from 'pokemon/types';
+
+const gen3Pokemon: Array<TPokemon> = [
     {
         "name": "treecko",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/252.png",

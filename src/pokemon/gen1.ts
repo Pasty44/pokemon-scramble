@@ -1,6 +1,6 @@
-// import TPokemon from 'Pokemon/types';
+import { TPokemon } from 'pokemon/types';
 
-const gen1Pokemon = [
+const gen1Pokemon: Array<TPokemon> = [
     {
         "name": "bulbasaur",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",

@@ -1,4 +1,6 @@
-const gen6Pokemon = [
+import { TPokemon } from 'pokemon/types';
+
+const gen6Pokemon: Array<TPokemon> = [
     {
         "name": "chespin",
         "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/650.png",
