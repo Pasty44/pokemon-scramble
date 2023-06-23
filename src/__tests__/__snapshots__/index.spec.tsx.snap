@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App should render Setup initially 1`] = `
+Array [
+  <img
+    alt="pokemon scramble logo"
+    id="logo"
+    src="/logo.png"
+  />,
+  <div
+    className="my-1"
+    id="instructions"
+  >
+    Select which generations are included in the game. Then try to work out the scrambled pokemon name!
+  </div>,
+  <div
+    id="genCheckboxContainer"
+  >
+    <div
+      className="genCheckbox noSelect"
+      onClick={[Function]}
+      style={
+        Object {
+          "border": "3px solid black",
+          "color": "black",
+        }
+      }
+    >
+      GEN 
+      1
+    </div>
+    <div
+      className="genCheckbox noSelect"
+      onClick={[Function]}
+      style={
+        Object {
+          "border": "3px solid grey",
+          "color": "grey",
+        }
+      }
+    >
+      GEN 
+      2
+    </div>
+    <div
+      className="genCheckbox noSelect"
+      onClick={[Function]}
+      style={
+        Object {
+          "border": "3px solid grey",
+          "color": "grey",
+        }
+      }
+    >
+      GEN 
+      3
+    </div>
+    <div
+      className="genCheckbox noSelect"
+      onClick={[Function]}
+      style={
+        Object {
+          "border": "3px solid grey",
+          "color": "grey",
+        }
+      }
+    >
+      GEN 
+      4
+    </div>
+    <div
+      className="genCheckbox noSelect"
+      onClick={[Function]}
+      style={
+        Object {
+          "border": "3px solid grey",
+          "color": "grey",
+        }
+      }
+    >
+      GEN 
+      5
+    </div>
+    <div
+      className="genCheckbox noSelect"
+      onClick={[Function]}
+      style={
+        Object {
+          "border": "3px solid grey",
+          "color": "grey",
+        }
+      }
+    >
+      GEN 
+      6
+    </div>
+    <div
+      className="genCheckbox noSelect"
+      onClick={[Function]}
+      style={
+        Object {
+          "border": "3px solid grey",
+          "color": "grey",
+        }
+      }
+    >
+      GEN 
+      7
+    </div>
+    <div
+      className="genCheckbox noSelect"
+      onClick={[Function]}
+      style={
+        Object {
+          "border": "3px solid grey",
+          "color": "grey",
+        }
+      }
+    >
+      GEN 
+      8
+    </div>
+  </div>,
+  <button
+    className="my-1 noSelect"
+    id="startBtn"
+    onClick={[Function]}
+  >
+    START GAME
+  </button>,
+]
+`;
