@@ -1,5 +1,5 @@
 export type TPokemon = {
-    name: string
-    url: string;
-    pokedexId: number;
+  name: string;
+  url: string;
+  pokedexId: number;
 };
