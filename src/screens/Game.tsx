@@ -40,32 +40,32 @@ export default function Game({ pokemonList, reset }: IGameProps) {
     const [canType, setCanType] = useState(true);
     const [userGuess, setUserGuess] = useState('');
     const [currentPokemon, setCurrentPokemon] = useState(getCurrentPokemonObj);
-    
-    const selectNewPokemon = () => {
-        // When we reach the end, shuffle and start over
-        if (currentIndex.current === currentPokemonList.current.length - 1) {
-            currentPokemonList.current = shuffleArray(pokemonList);
-            currentIndex.current = 0;
-        }
-        else {
-            currentIndex.current += 1;
-        }
-        
-        setUserGuess('');
-        
-        inputRef.current.focus();
-        
-        setCurrentPokemon(getCurrentPokemonObj());
-    };
 
     // Select new pokemon after a delay
     const startNewPokemonTimer = useCallback(() => {
+        const selectNewPokemon = () => {
+            // When we reach the end, shuffle and start over
+            if (currentIndex.current === currentPokemonList.current.length - 1) {
+                currentPokemonList.current = shuffleArray(pokemonList);
+                currentIndex.current = 0;
+            }
+            else {
+                currentIndex.current += 1;
+            }
+            
+            setUserGuess('');
+            
+            inputRef.current.focus();
+            
+            setCurrentPokemon(getCurrentPokemonObj());
+        };
+
         newPokemonTimeout.current = setTimeout(() => {
             inputColor.current = INPUT_COLORS.NEUTRAL;
             selectNewPokemon();
             setCanType(true);
         }, 1600);
-    }, []);
+    }, [pokemonList]);
     
     const onType = (updatedGuess: string, cursorPosition: number | null) => {
         if (!canType) return;
