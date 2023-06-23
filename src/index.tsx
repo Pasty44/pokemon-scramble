@@ -27,11 +27,9 @@ export default function App() {
 
 const rootElement = document.getElementById("root");
 
-if (rootElement) {
-  ReactDOM.render(
-    <StrictMode>
-      <App />
-    </StrictMode>,
-    rootElement
-  );
-}
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  rootElement
+);
