@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should render Setup initially 1`] = `
+exports[`Setup should render gen 1 selected only initially 1`] = `
 Array [
   <img
     alt="pokemon scramble logo"

@@ -7,7 +7,7 @@ import Game from "screens/Game";
 jest.mock("react-dom");
 
 describe("App", () => {
-  it("App should render Setup initially", () => {
+  it("should render Setup initially", () => {
     const component = renderer.create(<App />);
 
     const testInstance = component.root;
@@ -18,7 +18,7 @@ describe("App", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it("App should render Game after start is clicked", () => {
+  it("should render Game after start is clicked", () => {
     const component = renderer.create(<App />);
 
     const testInstance = component.root;
@@ -30,7 +30,7 @@ describe("App", () => {
     expect(testInstance.findByType(Game)).toBeDefined();
   });
 
-  it("App should render Setup after reset is clicked", () => {
+  it("should render Setup after reset is clicked", () => {
     const component = renderer.create(<App />);
 
     const testInstance = component.root;

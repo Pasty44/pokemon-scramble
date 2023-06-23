@@ -45,7 +45,9 @@ export default function Setup({ startGame }: ISetupProps) {
       <div id="genCheckboxContainer">
         {Object.keys(pokemon).map((key) => (
           <div
-            className="genCheckbox noSelect"
+            id={`gen${key}`}
+            data-id="gen-div"
+            className={`genCheckbox noSelect${!gens[key] ? " disabled" : ""}`}
             key={key}
             onClick={() => setGens({ ...gens, [key]: !gens[key] })}
             style={{
