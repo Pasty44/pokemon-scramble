@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game should render game page with sample pokemon 1`] = `
+Array [
+  <div
+    id="spriteContainer"
+  >
+    <div
+      id="spriteMask"
+    >
+      ?
+    </div>
+    <img
+      alt="pokemon sprite"
+      height="100%"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+      width="100%"
+    />
+  </div>,
+  <div
+    className="my-3"
+  >
+    BULBASAUR
+  </div>,
+  <div
+    id="streakContainer"
+  >
+    <div
+      className="streak"
+    >
+      <div
+        className="streakType"
+      >
+        Current streak
+      </div>
+      <div>
+        : 
+        0
+      </div>
+    </div>
+    <div
+      className="streak"
+    >
+      <div
+        className="streakType"
+      >
+        Longest streak
+      </div>
+      <div>
+        : 
+        0
+      </div>
+    </div>
+  </div>,
+  <input
+    autoComplete="off"
+    autoFocus={true}
+    className="my-1"
+    id="userGuess"
+    onChange={[Function]}
+    style={
+      Object {
+        "color": "#000000",
+      }
+    }
+    value=""
+  />,
+  <button
+    className="my-1 noSelect"
+    id="skipBtn"
+    onClick={[Function]}
+  >
+    I DON'T KNOW
+  </button>,
+  <button
+    className="my-1 noSelect"
+    id="resetBtn"
+    onClick={[Function]}
+  >
+    CHANGE GENS
+  </button>,
+]
+`;
