@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { shufflePokemon, getRandomPokemon } from "scripts/util";
 import { TPokemon } from "pokemon/types";
 
@@ -15,12 +15,13 @@ export type TPokemonQuiz = {
 function usePokemonQuiz(pokemon: Array<TPokemon>): TPokemonQuiz {
   const [currentStreak, setCurrentStreak] = useState(0);
   const [longestStreak, setLongestStreak] = useState(0);
-  const currentPokemonList = useRef<Array<TPokemon>>(
-    shufflePokemon([...pokemon])
-  );
-  const [currentPokemon, setCurrentPokemon] = useState<TPokemon>(() =>
-    getRandomPokemon(currentPokemonList.current)
-  );
+  const currentPokemonList = useRef<Array<TPokemon>>(pokemon);
+  const [currentPokemon, setCurrentPokemon] = useState<TPokemon>(pokemon[0]);
+
+  useEffect(() => {
+    currentPokemonList.current = shufflePokemon([...pokemon]);
+    setCurrentPokemon(getRandomPokemon(currentPokemonList.current));
+  }, [pokemon]);
 
   const goNext = (): void => {
     if (currentPokemonList.current.length <= 0) {
