@@ -8,17 +8,17 @@ import Setup from "screens/Setup";
 import { TPokemon } from "pokemon/types";
 
 export default function App() {
-  const [pokemonList, setPokemonList] = useState<Array<TPokemon> | null>(null);
+  const [pokemonList, setPokemonList] = useState<Array<TPokemon> | undefined>();
 
   const reset = () => {
-    setPokemonList(null);
+    setPokemonList(undefined);
   };
 
   const startGame = (list: Array<TPokemon>) => {
     setPokemonList(list);
   };
 
-  if (pokemonList === null) {
+  if (pokemonList === undefined) {
     return <Setup {...{ startGame }} />;
   }
 

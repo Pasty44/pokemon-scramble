@@ -24,6 +24,7 @@
       "pokemon": ["src/pokemon"],
       "screens": ["src/screens"],
       "scripts": ["src/scripts"],
+      "hooks": ["src/hooks"],
       "styles": ["src/styles"],
   }
   },

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { shuffleArray, shuffleString } from "scripts/util";
+import usePokemonQuiz from "hooks/usePokemonQuiz";
 import { TPokemon } from "pokemon/types";
 
 const INPUT_COLORS = {
@@ -14,6 +15,7 @@ export interface IGameProps {
 }
 
 export default function Game({ pokemonList, reset }: IGameProps) {
+  const quiz = usePokemonQuiz(pokemonList);
   const inputRef = useRef<any>(null);
   const inputColor = useRef(INPUT_COLORS.NEUTRAL);
 
