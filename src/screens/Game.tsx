@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { shuffleArray, shuffleString } from "scripts/util";
 import usePokemonQuiz from "hooks/usePokemonQuiz";
 import { TPokemon } from "pokemon/types";
 
@@ -19,56 +18,29 @@ export default function Game({ pokemonList, reset }: IGameProps) {
   const inputRef = useRef<any>(null);
   const inputColor = useRef(INPUT_COLORS.NEUTRAL);
 
-  // This is so we can clear timer on component unmounting to prevent crashes/memory leaks
   const newPokemonTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // This is so we can clear timer on component unmounting to prevent crashes/memory leaks
   useEffect(() => {
     return () => {
       if (!!newPokemonTimeout.current) clearTimeout(newPokemonTimeout.current);
     };
   }, []);
 
-  const [currentStreak, setCurrentStreak] = useState(0);
-  const [longestStreak, setLongestStreak] = useState(0);
-
-  // Create a shuffled copy of the list prop to iterate through
-  const currentPokemonList = useRef(shuffleArray([...pokemonList]));
-  const currentIndex = useRef(0);
-  const getCurrentPokemonObj = () => ({
-    ...currentPokemonList.current[currentIndex.current],
-    name: currentPokemonList.current[currentIndex.current].name.toUpperCase(),
-    shuffledName: shuffleString(
-      currentPokemonList.current[currentIndex.current].name
-    ).toUpperCase(),
-  });
-
   const [canType, setCanType] = useState(true);
   const [userGuess, setUserGuess] = useState("");
-  const [currentPokemon, setCurrentPokemon] = useState(getCurrentPokemonObj);
 
   // Select new pokemon after a delay
   const startNewPokemonTimer = useCallback(() => {
     const selectNewPokemon = () => {
-      // When we reach the end, shuffle and start over
-      if (currentIndex.current === currentPokemonList.current.length - 1) {
-        currentPokemonList.current = shuffleArray(pokemonList);
-        currentIndex.current = 0;
-      } else {
-        currentIndex.current += 1;
-      }
-
       setUserGuess("");
-
       inputRef.current.focus();
-
-      setCurrentPokemon(getCurrentPokemonObj());
+      quiz.goNext();
+      inputColor.current = INPUT_COLORS.NEUTRAL;
+      setCanType(true);
     };
 
-    newPokemonTimeout.current = setTimeout(() => {
-      inputColor.current = INPUT_COLORS.NEUTRAL;
-      selectNewPokemon();
-      setCanType(true);
-    }, 2000);
-  }, [pokemonList]);
+    newPokemonTimeout.current = setTimeout(selectNewPokemon, 2000);
+  }, [quiz]);
 
   const onType = (updatedGuess: string, cursorPosition: number | null) => {
     if (!canType) return;
@@ -82,15 +54,10 @@ export default function Game({ pokemonList, reset }: IGameProps) {
       inputRef.current.selectionEnd = cursorPosition;
     }, 0);
 
-    if (updatedGuess === currentPokemon.name) {
+    if (updatedGuess === quiz.currentPokemon.name) {
       inputColor.current = INPUT_COLORS.SUCCESS;
       setCanType(false);
-      setCurrentStreak((curr) => curr + 1);
-
-      if (currentStreak + 1 > longestStreak) {
-        setLongestStreak((curr) => curr + 1);
-      }
-
+      quiz.incrementCurrentStreak();
       startNewPokemonTimer();
     }
   };
@@ -98,38 +65,37 @@ export default function Game({ pokemonList, reset }: IGameProps) {
   const skip = useCallback(() => {
     inputColor.current = INPUT_COLORS.FAIL;
     setCanType(false);
-    setCurrentStreak(0);
-    setUserGuess(currentPokemon.name);
-
+    quiz.resetCurrentStreak();
+    setUserGuess(quiz.currentPokemon.name);
     startNewPokemonTimer();
-  }, [currentPokemon, startNewPokemonTimer]);
+  }, [quiz, startNewPokemonTimer]);
 
   return (
     <>
       <div id="spriteContainer">
         {canType && <div id="spriteMask">?</div>}
         <img
-          src={currentPokemon.url}
+          src={quiz.currentPokemon.url}
           height="100%"
           width="100%"
           alt="pokemon sprite"
         />
       </div>
 
-      <div className="my-3">{currentPokemon.shuffledName}</div>
+      <div className="my-3">{quiz.currentPokemon.shuffledName}</div>
 
       <div id="streakContainer">
         <div className="streak">
           <div className="streakType">Current streak</div>
-          <div>: {currentStreak}</div>
+          <div>: {quiz.currentStreak}</div>
         </div>
         <div className="streak">
           <div className="streakType">Longest streak</div>
-          <div>: {longestStreak}</div>
+          <div>: {quiz.longestStreak}</div>
         </div>
       </div>
 
-      {currentPokemon.name.indexOf(" ") > -1 && (
+      {quiz.currentPokemon.name.indexOf(" ") > -1 && (
         <div id="spaceWarning">* This name contains a space</div>
       )}
 

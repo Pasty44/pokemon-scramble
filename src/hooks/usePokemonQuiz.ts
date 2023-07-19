@@ -12,7 +12,7 @@ export type TPokemonQuiz = {
   currentPokemon: TPokemon;
 };
 
-export default (pokemon: Array<TPokemon>): TPokemonQuiz => {
+function usePokemonQuiz(pokemon: Array<TPokemon>): TPokemonQuiz {
   const [currentStreak, setCurrentStreak] = useState(0);
   const [longestStreak, setLongestStreak] = useState(0);
   const currentPokemonList = useRef<Array<TPokemon>>(
@@ -56,4 +56,6 @@ export default (pokemon: Array<TPokemon>): TPokemonQuiz => {
     longestStreak,
     currentPokemon,
   };
-};
+}
+
+export default usePokemonQuiz;
