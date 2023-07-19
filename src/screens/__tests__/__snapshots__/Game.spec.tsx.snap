@@ -19,9 +19,7 @@ Array [
   </div>,
   <div
     className="my-3"
-  >
-    BULBASAUR
-  </div>,
+  />,
   <div
     id="streakContainer"
   >

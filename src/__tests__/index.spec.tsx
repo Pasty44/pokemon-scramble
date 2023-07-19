@@ -3,9 +3,6 @@ import App from "../";
 import Setup from "screens/Setup";
 import Game from "screens/Game";
 
-// Mocked so that ReactDOM.render isn't called, which causes issues in jest env
-jest.mock("react-dom");
-
 describe("App", () => {
   it("should render Setup initially", () => {
     const component = renderer.create(<App />);

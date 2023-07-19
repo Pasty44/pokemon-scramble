@@ -140,6 +140,7 @@
       "^pokemon(.*)$": "<rootDir>/src/pokemon$1",
       "^screen(.*)$": "<rootDir>/src/screen$1",
       "^scripts(.*)$": "<rootDir>/src/scripts$1",
+      "^hooks(.*)$": "<rootDir>/src/hooks$1",
       "^styles(.*)$": "<rootDir>/src/styles$1"
     },
     "moduleFileExtensions": [
