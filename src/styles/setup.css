@@ -1,39 +1,51 @@
 #logo {
+  width: 50%;
+  min-width: 300px;
+  max-width: 900px;
+}
+
+@media only screen and (min-width: 650px) {
+  #logo {
     margin: 40px 0px;
-    width: 50%;
-    min-width: 300px;
-    max-width: 900px;
   }
-  
+}
+
+#instructions {
+  padding: 10px 0px;
+  width: 60%;
+  max-width: 900px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
   #instructions {
-    padding: 10px 0px;
-    width: 60%;
-    max-width: 900px;
-    text-align: center;
+    width: 95%;
   }
-  
-  @media only screen and (max-width: 800px) {
-    #instructions {
-      width: 95%;
-    }
+}
+
+@media only screen and (max-width: 650px) {
+  #instructions {
+    font-size: 1rem;
   }
-  
-  @media only screen and (max-width: 650px) {
-    #instructions {
-      font-size: 1rem;
-    }
-  }
-  
-  #genCheckboxContainer {
-    max-width: 700px;
-    padding: 10px;
-    text-align: center;
-  }
-  
+}
+
+#genCheckboxContainer {
+  max-width: 700px;
+  padding: 10px;
+  text-align: center;
+}
+
+.genCheckbox {
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+  padding: 8px;
+  width: 120px;
+}
+
+@media only screen and (max-width: 650px) {
   .genCheckbox {
-    display: inline-block;
-    cursor: pointer;
-    margin: 10px;
-    padding: 8px;
-    width: 120px;
+    font-size: 1rem;
+    padding: 6px;
   }
+}
