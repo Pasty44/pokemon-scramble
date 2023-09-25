@@ -74,6 +74,21 @@ button {
   padding-bottom: 24px;
 }
 
+.px-1 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.px-2 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.px-3 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 .p-1 {
   padding: 8px;
 }

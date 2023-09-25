@@ -1,16 +1,21 @@
+#spriteAndStreakContainer {
+  display: flex;
+}
+
 #spriteContainer {
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid #222;
   border-radius: 5px;
-  margin-top: 20px;
-  height: 100px;
-  width: 100px;
+  margin-top: 10px;
+  height: 110px;
+  width: 110px;
   position: relative;
   overflow: hidden;
 }
 
 #streakContainer {
   display: flex;
+  flex-direction: column;
 }
 
 .streak {
@@ -27,6 +32,12 @@
 .streakType {
   text-align: center;
   width: 90px;
+}
+
+#shuffledName {
+  background-color: rgba(255,255,255,0.75);
+  border-radius: 4px;
+  border: 1px solid grey;
 }
 
 #spaceWarning {

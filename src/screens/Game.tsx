@@ -73,28 +73,30 @@ export default function Game({ pokemonList, reset }: IGameProps) {
 
   return (
     <>
-      <div id="spriteContainer">
-        {canType && <div id="spriteMask">?</div>}
-        <img
-          src={quiz.currentPokemon.url}
-          height="100%"
-          width="100%"
-          alt="pokemon sprite"
-        />
+      <div id="spriteAndStreakContainer">
+        <div id="spriteContainer">
+          {canType && <div id="spriteMask">?</div>}
+          <img
+            src={quiz.currentPokemon.url}
+            height="100%"
+            width="100%"
+            alt="pokemon sprite"
+          />
+        </div>
+
+        <div id="streakContainer">
+          <div className="streak">
+            <div className="streakType">Current streak</div>
+            <div>: {quiz.currentStreak}</div>
+          </div>
+          <div className="streak">
+            <div className="streakType">Longest streak</div>
+            <div>: {quiz.longestStreak}</div>
+          </div>
+        </div>
       </div>
 
-      <div className="my-3">{quiz.currentPokemon.shuffledName}</div>
-
-      <div id="streakContainer">
-        <div className="streak">
-          <div className="streakType">Current streak</div>
-          <div>: {quiz.currentStreak}</div>
-        </div>
-        <div className="streak">
-          <div className="streakType">Longest streak</div>
-          <div>: {quiz.longestStreak}</div>
-        </div>
-      </div>
+      <div id="shuffledName" className="py-1 px-2 my-1">{quiz.currentPokemon.shuffledName}</div>
 
       {quiz.currentPokemon.name.indexOf(" ") > -1 && (
         <div id="spaceWarning">* This name contains a space</div>
