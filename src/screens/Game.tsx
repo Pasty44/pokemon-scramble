@@ -63,6 +63,7 @@ export default function Game({ pokemonList, reset }: IGameProps) {
   };
 
   const skip = useCallback(() => {
+    inputRef.current.focus();
     inputColor.current = INPUT_COLORS.FAIL;
     setCanType(false);
     quiz.resetCurrentStreak();

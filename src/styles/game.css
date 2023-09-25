@@ -1,68 +1,68 @@
 #spriteContainer {
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid #222;
-    border-radius: 5px;
-    margin-top: 20px;
-    height: 100px;
-    width: 100px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  #streakContainer {
-    display: flex;
-  }
-  
-  .streak {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 4px;
-    color: white;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    margin: 8px;
-    padding: 8px;
-  }
-  
-  .streakType {
-    text-align: center;
-    width: 90px;
-  }
-  
-  #spaceWarning {
-    font-size: 12px;
-    font-style: italic;
-    margin-bottom: 10px;
-  }
-  
-  #spriteMask {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: white;
-    z-index: 999;
-  }
-  
-  #userGuess {
-    text-align: center;
-  }
-  
-  #skipBtn:hover {
-    background: #EEEEEE;
-  }
-  
-  #answer {
-    cursor: none;
-    margin-top: 20px;
-    filter: blur(12px);
-    transition: all 0.3s;
-  }
-  
-  #answer:hover {
-    filter: blur(0);
-  }
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid #222;
+  border-radius: 5px;
+  margin-top: 20px;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+#streakContainer {
+  display: flex;
+}
+
+.streak {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.streakType {
+  text-align: center;
+  width: 90px;
+}
+
+#spaceWarning {
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+#spriteMask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 999;
+}
+
+#userGuess {
+  text-align: center;
+}
+
+#skipBtn:hover {
+  background: #EEEEEE;
+}
+
+#answer {
+  cursor: none;
+  margin-top: 20px;
+  filter: blur(12px);
+  transition: all 0.3s;
+}
+
+#answer:hover {
+  filter: blur(0);
+}
